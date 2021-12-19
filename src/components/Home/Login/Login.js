@@ -4,14 +4,9 @@ import img1 from "../../Img/Capture1.PNG";
 import "./Login.css";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(watch("example"));
+
   return (
     <>
       <span className="sing">Log</span>
@@ -22,7 +17,12 @@ const Login = () => {
           <label htmlFor="kka" className="fw-bold">
             * Email
           </label>
-          <input className="form-control" {...register("example")} />
+          <input
+            className="form-control"
+            type="email"
+            {...register("example")}
+            required
+          />
         </div>
         <div className="pe-3 Email">
           <label htmlFor="jaa" className="fw-bold">
@@ -30,11 +30,11 @@ const Login = () => {
           </label>
           <input
             className="form-control"
+            type="password"
             {...register("exampleRequired", { required: true })}
+            required
           />
         </div>
-        {errors.exampleRequired && <span>This field is required</span>}
-
         <div className="pe-3 Email">
           <label htmlFor="jaa" className="fw-bold">
             * Please enter the characters shown inside the blue box
@@ -46,6 +46,7 @@ const Login = () => {
           <input
             className="form-control"
             {...register("exampleRequired", { required: true })}
+            required
           />
         </div>
         <div class="form-check Email">
@@ -66,13 +67,10 @@ const Login = () => {
         </div>
       </form>
       <div className="mt-5 text-center ">
-        <button className="btn btn-outline-danger">
-          {" "}
-          Forgot your password?{" "}
-        </button>
+        <button className=" Forgot"> Forgot your password? </button>
       </div>
       <div className="mt-2 mb-5 text-center ">
-        <button className="btn btn-outline-danger">
+        <button className="receive">
           {" "}
           Didn't receive confirmation instructions?
         </button>
