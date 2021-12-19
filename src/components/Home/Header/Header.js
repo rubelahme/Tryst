@@ -1,5 +1,7 @@
 import React from "react";
+import Login from "../Login/Login";
 import "./Header.css";
+import img3 from "../../Img/Captureq.PNG";
 
 const Header = () => {
   return (
@@ -8,7 +10,7 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <h1>rubel ahmed</h1>
+              <Login></Login>
             </div>
             <div className="col-md-6">
               <span className="sing">Sign</span>
@@ -27,6 +29,11 @@ const Header = () => {
                   <button className="Provider">I am a Client</button>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 mb-4">
+              <img className="imgPic1" src={img3} alt="" />
             </div>
           </div>
         </div>

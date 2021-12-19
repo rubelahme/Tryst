@@ -13,7 +13,6 @@ const NavBar = () => {
           <Navbar.Brand href="#home">
             <img className="img1" src={img1} alt="Tryst link" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#features" className="Nav1">
@@ -30,9 +29,16 @@ const NavBar = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
+              <Nav.Link href="#deets" className="deets">
+                More deets
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+          <div>
+            <span className="deet">
+              <FontAwesomeIcon icon={faBars} />
+            </span>
+          </div>
         </Container>
       </Navbar>
     </>
