@@ -2,10 +2,24 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import img1 from "../../Img/Capture1.PNG";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  let navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const ItemId = {
+      Email: data.example,
+      Password: data.exampleRequired,
+    };
+    fetch("https://desolate-escarpment-97011.herokuapp.com/email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(ItemId),
+    })
+      .then((res) => res.json())
+      .then((result) => navigate("/verify"));
+  };
 
   return (
     <>
