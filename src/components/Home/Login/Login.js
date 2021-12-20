@@ -59,7 +59,7 @@ const Login = () => {
           </div>
           <input
             className="form-control"
-            {...register("exampleRequired", { required: true })}
+            {...register("exampleReq", { required: true })}
             required
           />
         </div>
